@@ -10,12 +10,15 @@ import java.net.URISyntaxException;
 @SpringBootApplication
 public class SpringbootServicesRestClientApplication {
 
+  //==========================================================================
+  // MAIN
+  //==========================================================================
   public static void main(String[] args) throws URISyntaxException {
     SpringApplication.run(SpringbootServicesRestClientApplication.class, args);
 
-    //CALL MICROSERVICE
+    //CALL SERVER
     RestTemplate restTemplate = new RestTemplate();
-    String       result       = restTemplate.getForObject(new URI("http://localhost:8081/Hello"), String.class);
+    String       result       = restTemplate.getForObject(new URI("http://localhost:8080/Hello"), String.class);
 
     //RETURN SOMETHING
     System.out.println(result);
